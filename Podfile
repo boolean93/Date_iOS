@@ -1,0 +1,5 @@
+platform :ios, '7.0'
+pod 'AFNetworking', '~> 2.5'
+pod 'Classy', '~> 0.2.4'
+pod 'ClassyLiveLayout', '~> 0.6.0'
+pod 'Masonry', '~> 0.6.1'
