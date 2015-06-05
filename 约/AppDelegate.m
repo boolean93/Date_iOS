@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "IndexViewController.h"
+#import "Classy.h"
+
 
 @interface AppDelegate ()
 
@@ -16,7 +19,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+#if TARGET_IPHONE_SIMULATOR
+    // get absolute file path of stylesheet, using relative path
+    NSString *absoluteFilePath = CASAbsoluteFilePath(@"Stylesheets/stylesheet.cas");
+    [CASStyler defaultStyler].watchFilePath = absoluteFilePath;
+#endif
+    
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    self.window.backgroundColor = UIColor.whiteColor;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:IndexViewController.new];
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

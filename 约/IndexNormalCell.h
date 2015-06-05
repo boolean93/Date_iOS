@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  IndexNormalCellViewTableViewCell.h
 //  约
 //
 //  Created by BooleanMac on 15/6/5.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface IndexNormalCell : UITableViewCell
+@property (strong, nonatomic) UILabel* label;
 @end
-
