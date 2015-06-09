@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface IndexNormalCell : UITableViewCell
-@property (strong, nonatomic) UILabel* label;
+@property (strong, nonatomic) NSString* avatarURL;
+@property (strong, nonatomic) UIImageView* avatar;
+@property (strong, nonatomic) UIImageView* gender;
+@property (strong, nonatomic) UILabel* nickname;
+@property (strong, nonatomic) UILabel* signature;
+@property (strong, nonatomic) UILabel* dateTitle;
+
+
 @end

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93DEE1141B25443700A5681E /* iconfont-boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 93DEE10F1B25443700A5681E /* iconfont-boy.png */; };
+		93DEE1151B25443700A5681E /* iconfont-girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 93DEE1101B25443700A5681E /* iconfont-girl.png */; };
+		93DEE1161B25443700A5681E /* iconfont-jikediancanicon28.png in Resources */ = {isa = PBXBuildFile; fileRef = 93DEE1111B25443700A5681E /* iconfont-jikediancanicon28.png */; };
+		93DEE1171B25443700A5681E /* iconfont-qian.png in Resources */ = {isa = PBXBuildFile; fileRef = 93DEE1121B25443700A5681E /* iconfont-qian.png */; };
+		93DEE1181B25443700A5681E /* iconfont-shijian.png in Resources */ = {isa = PBXBuildFile; fileRef = 93DEE1131B25443700A5681E /* iconfont-shijian.png */; };
 		93EEA2AF1B2151A8004F4B17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEA2AE1B2151A8004F4B17 /* main.m */; };
 		93EEA2B21B2151A8004F4B17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEA2B11B2151A8004F4B17 /* AppDelegate.m */; };
 		93EEA2B51B2151A8004F4B17 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EEA2B41B2151A8004F4B17 /* IndexViewController.m */; };
@@ -31,6 +36,11 @@
 /* Begin PBXFileReference section */
 		1A498A1A0ED17BA0431A4A0A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5AF56F1118CF13FA5648F4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		93DEE10F1B25443700A5681E /* iconfont-boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-boy.png"; sourceTree = "<group>"; };
+		93DEE1101B25443700A5681E /* iconfont-girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-girl.png"; sourceTree = "<group>"; };
+		93DEE1111B25443700A5681E /* iconfont-jikediancanicon28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-jikediancanicon28.png"; sourceTree = "<group>"; };
+		93DEE1121B25443700A5681E /* iconfont-qian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-qian.png"; sourceTree = "<group>"; };
+		93DEE1131B25443700A5681E /* iconfont-shijian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-shijian.png"; sourceTree = "<group>"; };
 		93EEA2A91B2151A8004F4B17 /* 约.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "约.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93EEA2AD1B2151A8004F4B17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93EEA2AE1B2151A8004F4B17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -123,6 +133,11 @@
 		93EEA2AC1B2151A8004F4B17 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				93DEE10F1B25443700A5681E /* iconfont-boy.png */,
+				93DEE1101B25443700A5681E /* iconfont-girl.png */,
+				93DEE1111B25443700A5681E /* iconfont-jikediancanicon28.png */,
+				93DEE1121B25443700A5681E /* iconfont-qian.png */,
+				93DEE1131B25443700A5681E /* iconfont-shijian.png */,
 				93EEA2AD1B2151A8004F4B17 /* Info.plist */,
 				93EEA2AE1B2151A8004F4B17 /* main.m */,
 			);
@@ -257,7 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				93EEA2BA1B2151A8004F4B17 /* Images.xcassets in Resources */,
+				93DEE1161B25443700A5681E /* iconfont-jikediancanicon28.png in Resources */,
+				93DEE1171B25443700A5681E /* iconfont-qian.png in Resources */,
+				93DEE1141B25443700A5681E /* iconfont-boy.png in Resources */,
 				93EEA2DE1B215FF2004F4B17 /* stylesheet.cas in Resources */,
+				93DEE1151B25443700A5681E /* iconfont-girl.png in Resources */,
+				93DEE1181B25443700A5681E /* iconfont-shijian.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

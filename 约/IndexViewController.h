@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IndexViewController : UITableViewController
-
-
+@interface IndexViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) NSArray *data;
 @end
 
