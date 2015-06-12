@@ -15,6 +15,15 @@
 @property (strong, nonatomic) UILabel* nickname;
 @property (strong, nonatomic) UILabel* signature;
 @property (strong, nonatomic) UILabel* dateTitle;
+@property (strong, nonatomic) UIImageView* addressIcon;
+@property (strong, nonatomic) UIImageView* timeIcon;
+@property (strong, nonatomic) UIImageView* moneyIcon;
+@property (strong, nonatomic) UILabel* address;
+@property (strong, nonatomic) UILabel* time;
+@property (strong, nonatomic) UILabel* money;
+@property (strong, nonatomic) UILabel* submitTime;
+@property (strong, nonatomic) UILabel* cellSeparator;
 
 
+-(NSString *)dateTransfer:(NSString *)timestamp;
 @end

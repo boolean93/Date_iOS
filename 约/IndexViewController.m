@@ -21,12 +21,14 @@
 - (void)viewDidLoad {
     [self fetchInfo];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.tableView.backgroundColor = [UIColor colorWithRed:239/255 green:239/255 blue:239/255 alpha:0];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.title = @"约吗";
-    UIColor *redColor = [UIColor colorWithRed:255/255
-                                       green:61/255
-                                        blue:61/255
-                                       alpha:0];
+    UIColor *redColor = [UIColor colorWithRed:255/255.0
+                                       green:61/255.0
+                                        blue:61/255.0
+                                       alpha:1];
     self.navigationController.navigationBar.barTintColor = redColor;
     [self.tableView registerClass:IndexNormalCell.class forCellReuseIdentifier:@"IndexNormalCellIdentifier"];
     [self.tableView registerClass:IndexHeaderCell.class forHeaderFooterViewReuseIdentifier:@"IndexHeaderCellIdentifier"];
@@ -42,24 +44,24 @@
 # pragma mark UITableViewDataSource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 180;
+    return 280;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     IndexNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IndexNormalCellIdentifier"];
     if(!self.data) return cell;
     
+    NSInteger row = indexPath.row;
+    
     /**
      *  设置头像
      */
-    NSURL *avatarURL = [NSURL URLWithString:[self.data[indexPath.row] objectForKey:@"head"]];
+    NSURL *avatarURL = [NSURL URLWithString:[self.data[row] objectForKey:@"head"]];
     __weak IndexNormalCell *weakCell = (IndexNormalCell *)cell;
     [cell.avatar setImageWithURLRequest:[NSURLRequest requestWithURL:avatarURL]
                        placeholderImage:[UIImage imageNamed:@"iconfont-qian"]
                                 success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                                     [weakCell.avatar setImage:image];
-                                    weakCell.avatar.layer.masksToBounds  = YES;
-                                    weakCell.avatar.layer.cornerRadius = weakCell.avatar.frame.size.width / 2;
                                 } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
                                     NSLog(@"Fetching Image Failed: %@", avatarURL);
                                 }];
@@ -67,12 +69,12 @@
     /**
      *  设置昵称
      */
-    cell.nickname.text = [self.data[indexPath.row] objectForKey:@"nickname"];
+    cell.nickname.text = [self.data[row] objectForKey:@"nickname"];
     
     /**
      *  设置性别
      */
-    if ([[self.data[indexPath.row] objectForKey:@"gender"] isEqual:@1]){
+    if ([[self.data[row] objectForKey:@"gender"] isEqual:@"1"]){
         [cell.gender setImage:[UIImage imageNamed:@"iconfont-boy"]];
     }else{
         [cell.gender setImage:[UIImage imageNamed:@"iconfont-girl"]];
@@ -81,13 +83,49 @@
     /**
      *  设置个人签名
      */
-    cell.signature.text = [self.data[indexPath.row] objectForKey:@"signature"];
+    cell.signature.text = [self.data[row] objectForKey:@"signature"];
     
     /**
      *  设置约的标题
      */
-    cell.dateTitle.text = [self.data[indexPath.row] objectForKey:@"title"];
+    cell.dateTitle.text = [self.data[row] objectForKey:@"title"];
     
+    /**
+     *  设置地点
+     */
+    NSString *address = [self.data[row] objectForKey:@"place"];
+    cell.address.text = [NSString stringWithFormat:@"地点：%@", address];
+    
+    /**
+     *  设置时间
+     */
+    NSString *time = [self.data[row] objectForKey:@"date_at"];
+    cell.time.text = [NSString stringWithFormat:@"时间：%@", [cell dateTransfer:time] ];
+    
+    /**
+     *  设置花费
+     */
+    NSString *cost = [self.data[row] objectForKey:@"cost_model"];
+    switch ([cost integerValue]) {
+        case 1:
+            cell.money.text = @"花费：AA制";
+            break;
+        case 2:
+            cell.money.text = @"花费：我请客";
+            break;
+        case 3:
+            cell.money.text = @"花费：求请客";
+            break;
+        default:
+            cell.money.text = @"花费：未知";
+            break;
+    }
+    
+    /**
+     *  设置发布时间
+     */
+    NSString *submitTime = [self.data[row] objectForKey:@"created_at"];
+    cell.submitTime.text = [cell dateTransfer:submitTime];
     
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
@@ -105,7 +143,6 @@
 - (void)fetchInfo{
     [self getDateListWithUid:@1 token:@"nasdfnldssdaf"];
 }
-
 
 /**
  *
