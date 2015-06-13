@@ -16,59 +16,76 @@
     if(!self) return nil;
     
     self.backgroundColor = [UIColor whiteColor];
+    [self initializeViews];
+    [self makeConstraints];
+    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
     
+    return self;
+}
+
+- (void)initializeViews{
+    
+    // 缩略图
     self.avatar = UIImageView.new;
     self.avatar.layer.masksToBounds  = YES;
     self.avatar.layer.borderColor = [[UIColor colorWithRed:221/255 green:221/255 blue:221/255 alpha:0.2] CGColor];
     self.avatar.layer.borderWidth = 1;
     self.avatar.layer.cornerRadius = 35;
     
+    // 用户昵称
     self.nickname = UILabel.new;
     self.nickname.font = [UIFont fontWithName:self.nickname.font.fontName size:20];
     
+    // 性别icon
     self.gender = UIImageView.new;
     
+    // 个性签名
     self.signature = UILabel.new;
     self.signature.font = [UIFont fontWithName:self.signature.font.fontName size:16];
     self.signature.textColor = [UIColor darkGrayColor];
     
+    // 时间Label
     self.dateTitle = UILabel.new;
     
+    // 时间icon
     self.timeIcon = UIImageView.new;
     [self.timeIcon setImage:[UIImage imageNamed:@"iconfont-shijian" ]];
     
+    // 地点icon
     self.addressIcon = UIImageView.new;
     [self.addressIcon setImage:[UIImage imageNamed:@"iconfont-jikediancanicon28"]];
-
+    
+    
+    // 花费icon
     self.moneyIcon = UIImageView.new;
     [self.moneyIcon setImage:[UIImage imageNamed:@"iconfont-qian"]];
     
+    // 时间Label
     self.time = UILabel.new;
     self.time.text = @"时间:";
     self.time.font = [UIFont fontWithName:self.time.font.fontName size:16];
     self.time.textColor = [UIColor darkGrayColor];
     
+    // 地点Label
     self.address = UILabel.new;
     self.address.text = @"地点:";
     self.address.font = [UIFont fontWithName:self.address.font.fontName size:16];
     self.address.textColor = [UIColor darkGrayColor];
     
+    // 花费Label
     self.money = UILabel.new;
     self.money.text = @"花费:";
     self.money.font = [UIFont fontWithName:self.money.font.fontName size:16];
     self.money.textColor = [UIColor darkGrayColor];
     
+    // 发表时间Label
     self.submitTime = UILabel.new;
     self.submitTime.font = [UIFont fontWithName:self.submitTime.font.fontName size:16];
     self.submitTime.textColor = [UIColor darkGrayColor];
-
+    
+    // 模拟的CellSaparator
     self.cellSeparator = UILabel.new;
     self.cellSeparator.backgroundColor = [UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1.0];
-    
-    [self makeConstraints];
-    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
-    return self;
 }
 
 - (void)makeConstraints{

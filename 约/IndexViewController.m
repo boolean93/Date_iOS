@@ -8,12 +8,13 @@
 
 #import "IndexViewController.h"
 #import "AFNetworking.h"
+#import "Masonry.h"
 #import "UIImageView+AFNetworking.h"
 #import "IndexNormalCell.h"
 #import "IndexHeaderCell.h"
 
 @interface IndexViewController ()
-
+@property(strong, nonatomic) UIButton *button;
 @end
 
 @implementation IndexViewController
@@ -26,12 +27,24 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.title = @"约吗";
     UIColor *redColor = [UIColor colorWithRed:255/255.0
-                                       green:61/255.0
-                                        blue:61/255.0
-                                       alpha:1];
+                                        green:61/255.0
+                                         blue:61/255.0
+                                        alpha:1];
     self.navigationController.navigationBar.barTintColor = redColor;
     [self.tableView registerClass:IndexNormalCell.class forCellReuseIdentifier:@"IndexNormalCellIdentifier"];
     [self.tableView registerClass:IndexHeaderCell.class forHeaderFooterViewReuseIdentifier:@"IndexHeaderCellIdentifier"];
+    
+    // 悬浮的Button
+    self.button = UIButton.new;
+    [self.navigationController.view addSubview:self.button];
+    
+    [self.button setBackgroundImage:[UIImage imageNamed:@"submit"] forState:UIControlStateNormal];
+    
+    [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.and.height.equalTo(@70);
+        make.bottom.equalTo(self.navigationController.view.mas_bottom).offset(-25);
+        make.right.equalTo(self.navigationController.view.mas_right).offset(-25);
+    }];
     
     [super viewDidLoad];
 }
@@ -129,6 +142,19 @@
     
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
+    return cell;
+}
+
+/**
+ *  图片轮播哟~
+ *
+ *  @param tableView 当前的tableView
+ *  @param section section喽
+ *
+ *  @return 轮播cell
+ */
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    IndexHeaderCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"IndexHeaderCellIdentifier"];
     return cell;
 }
 
