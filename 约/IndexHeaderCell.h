@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IndexHeaderCell : UITableViewHeaderFooterView
+@interface IndexHeaderCell : UITableViewCell
 @property (strong, nonatomic) UIScrollView *scroll;
+@property (strong, nonatomic) UIPageControl *page;
 @end

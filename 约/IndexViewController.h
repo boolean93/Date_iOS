@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IndexViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
+@interface IndexViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSArray *imageURL;
 @end
 
