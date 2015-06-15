@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "IndexNormalCell.h"
 #import "IndexHeaderCell.h"
+#import "ClickableImageView.h"
 
 @interface IndexViewController ()
 @property(strong, nonatomic) UIButton *button;
@@ -170,11 +171,11 @@
 
     NSInteger i = 0;
     for (NSDictionary *obj in self.imageURL) {
-        UIImageView *image = UIImageView.new;
+        ClickableImageView *image = [[ClickableImageView alloc]initWithUrl:[obj objectForKey:@"url"]];
         [image setFrame:CGRectMake(cell.scroll.frame.size.width * i, 0, cell.scroll.frame.size.width, cell.scroll.frame.size.height)];
         [cell.scroll addSubview:image];
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[obj objectForKey:@"src"]]];
-        __weak UIImageView *weakImage = image;
+        __weak ClickableImageView *weakImage = image;
         [image setImageWithURLRequest:request
                      placeholderImage:[UIImage imageNamed:@"iconfont-shijian" ]
                               success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {

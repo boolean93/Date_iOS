@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		934E1A411B2C1914008D0994 /* submit.png in Resources */ = {isa = PBXBuildFile; fileRef = 934E1A401B2C1914008D0994 /* submit.png */; };
+		934E1A441B2E691B008D0994 /* ClickableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E1A431B2E691B008D0994 /* ClickableImageView.m */; };
 		93DEE1141B25443700A5681E /* iconfont-boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 93DEE10F1B25443700A5681E /* iconfont-boy.png */; };
 		93DEE1151B25443700A5681E /* iconfont-girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 93DEE1101B25443700A5681E /* iconfont-girl.png */; };
 		93DEE1161B25443700A5681E /* iconfont-jikediancanicon28.png in Resources */ = {isa = PBXBuildFile; fileRef = 93DEE1111B25443700A5681E /* iconfont-jikediancanicon28.png */; };
@@ -38,6 +39,8 @@
 		1A498A1A0ED17BA0431A4A0A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5AF56F1118CF13FA5648F4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		934E1A401B2C1914008D0994 /* submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submit.png; sourceTree = "<group>"; };
+		934E1A421B2E691B008D0994 /* ClickableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableImageView.h; sourceTree = "<group>"; };
+		934E1A431B2E691B008D0994 /* ClickableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableImageView.m; sourceTree = "<group>"; };
 		93DEE10F1B25443700A5681E /* iconfont-boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-boy.png"; sourceTree = "<group>"; };
 		93DEE1101B25443700A5681E /* iconfont-girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-girl.png"; sourceTree = "<group>"; };
 		93DEE1111B25443700A5681E /* iconfont-jikediancanicon28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-jikediancanicon28.png"; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 		93EEA2D61B215816004F4B17 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				934E1A421B2E691B008D0994 /* ClickableImageView.h */,
+				934E1A431B2E691B008D0994 /* ClickableImageView.m */,
 				93EEA2D21B2157FC004F4B17 /* IndexNormalCell.h */,
 				93EEA2D31B2157FC004F4B17 /* IndexNormalCell.m */,
 				93EEA2DF1B216192004F4B17 /* IndexHeaderCell.h */,
@@ -335,6 +340,7 @@
 				93EEA2D41B2157FC004F4B17 /* IndexNormalCell.m in Sources */,
 				93EEA2B51B2151A8004F4B17 /* IndexViewController.m in Sources */,
 				93EEA2B21B2151A8004F4B17 /* AppDelegate.m in Sources */,
+				934E1A441B2E691B008D0994 /* ClickableImageView.m in Sources */,
 				93EEA2E11B216192004F4B17 /* IndexHeaderCell.m in Sources */,
 				93EEA2AF1B2151A8004F4B17 /* main.m in Sources */,
 			);
